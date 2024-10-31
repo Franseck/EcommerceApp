@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Special+Elite&display=swap');
+
+.logo{
+    width: 4rem;
+    height: 4rem;
+}
+.logo-text {
+    font-family: "Special Elite", serif;
+}
+.search-input {
+    border: none;
+    border-bottom: 1px solid grey;
+    padding: 5px 10px;
+    text-align: center;
+    margin-right: 1rem;
+}
+.icon{
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}
+.icon:hover {
+    cursor: pointer;
+}
