@@ -3,9 +3,11 @@
 .logo{
     width: 4rem;
     height: 4rem;
+    cursor: pointer;
 }
 .logo-text {
     font-family: "Special Elite", serif;
+    margin-left: 2rem;
 }
 .search-input {
     border: none;

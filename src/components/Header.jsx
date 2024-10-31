@@ -4,9 +4,11 @@ import "../css/Header.css";
 import { IoIosBasket } from "react-icons/io";
 import { FaMoon } from "react-icons/fa";
 import { IoSunny } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
     
+    const navigate = useNavigate();
     const [theme,setTheme] = useState(false) 
     const changeTheme = ()=> {
 const root = document.getElementById("root")
@@ -22,7 +24,7 @@ if(theme){
 
   return (
     <div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"space-between"}} >
-        <div className='flex-row'>
+        <div className='flex-row' onClick={()=>navigate("/") }>
             <img className='logo' src={logo} alt=""/>
             <p className='logo-text'>Seckin Best Buy</p>
         

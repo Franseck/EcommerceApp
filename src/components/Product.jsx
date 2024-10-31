@@ -13,7 +13,7 @@ const Product = ({product}) => {
         <img className="image" src={image} alt="" />
         <div>
             <p style={{textAlign:"center", height:"3rem"}}>{title}</p>
-            <h3 style={{textAlign:"center"}}>{price}</h3>
+            <h3 style={{textAlign:"center"}}>${price}</h3>
           </div>
 <div className='flex-row'> 
     <button onClick={()=>navigate("/product-details/" + id)} className='detail'>Details</button>
