@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ga+Maamli&family=Special+Elite&display=swap');
+
 .cards{
     width: 200px;
     height: 420px;
@@ -24,4 +26,11 @@
 .detail:hover{
     cursor: pointer;
     background-color: burlywood;
+}
+.detay {
+    font-family: "Special Elite", serif;
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
