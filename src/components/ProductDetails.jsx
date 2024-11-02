@@ -19,7 +19,11 @@ const increment =()=> {
 const decrement =()=> {
     setCount(count - 1)
 }
-
+const addBasket =()=>{
+    const payload ={
+        id, price, image, title, description, count
+    }
+}
 const dispatch = useDispatch()
 
 useEffect(() => {
@@ -33,6 +37,8 @@ dispatch(setSelectedProduct(product))
         }
     })
 }
+
+
   return (
     <div className="detay">
         <div style={{marginRight:"2rem"}}>
@@ -48,7 +54,7 @@ dispatch(setSelectedProduct(product))
         </div>
 
         <div>
-<button className='detail' style={{marginTop:"1.2rem"}}>Add to Cart</button>
+<button onClick={addBasket} className='detail' style={{marginTop:"1.2rem"}}>Add to Cart</button>
         </div>
 
         </div>
