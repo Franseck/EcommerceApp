@@ -45,6 +45,7 @@ const {products} = useSelector((store)=>store.basket);
    <IoIosBasket className='icon' />
     </Badge>
     </div>
+   
 </div>
     </div>
   )

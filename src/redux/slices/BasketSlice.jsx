@@ -11,7 +11,7 @@ return [];
 
 const initialState = {
 products: getBasketfromStorage(),
-
+drawer: false
 }
 const writeFromBasketToStorage =(basket)=>{
 localStorage.setItem("basket" , JSON.stringify(basket))
@@ -33,11 +33,14 @@ state.products = [...extractedProducts, findProduct]
     state.products = [...state.products , action.payload];
     writeFromBasketToStorage(state.products)
 }
-}
+},
+setDrawer: (state => {
+    state.drawer = !state.drawer
+    })
     }
     },
 
       )
 
-      export const {  addToBasket } = BasketSlice.actions
+      export const {  addToBasket , setDrawer} = BasketSlice.actions
       export default BasketSlice.reducer
