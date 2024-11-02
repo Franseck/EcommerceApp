@@ -5,6 +5,7 @@ import { setSelectedProduct } from '../redux/slices/ProductSlice'
 import "../css/Product.css"
 import { FaPlusSquare } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
+import { addToBasket } from '../redux/slices/BasketSlice'
 
 const ProductDetails = () => {
 const {id} = useParams()
@@ -13,6 +14,7 @@ const {products, selectedProduct} = useSelector((store)=>store.product)
 const { price, image, title, description} = selectedProduct;
 
 const [count, setCount] = useState(0)
+const dispatch = useDispatch()
 const increment =()=> {
     setCount(count +1)
 }
@@ -23,8 +25,9 @@ const addBasket =()=>{
     const payload ={
         id, price, image, title, description, count
     }
+    dispatch(addToBasket(payload))
 }
-const dispatch = useDispatch()
+
 
 useEffect(() => {
 getProductbyId()

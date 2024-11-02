@@ -6,6 +6,7 @@ import { FaMoon } from "react-icons/fa";
 import { IoSunny } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import Badge from '@mui/material/Badge';
+import { useSelector } from 'react-redux';
 
 
 
@@ -25,6 +26,8 @@ if(theme){
 }
     }
 
+const {products} = useSelector((store)=>store.basket);
+
   return (
     <div style={{display:"flex", flexDirection:"row", alignItems:"center", justifyContent:"space-between"}} >
         <div className='flex-row' onClick={()=>navigate("/") }>
@@ -38,7 +41,7 @@ if(theme){
    
     {/**/}
    {theme?  <FaMoon className='icon'onClick={changeTheme}/> : <IoSunny className='icon' onClick={changeTheme} />}
-   <Badge badgeContent={3} color="warning">
+   <Badge badgeContent={products.length} color="warning">
    <IoIosBasket className='icon' />
     </Badge>
     </div>
