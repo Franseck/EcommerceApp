@@ -5,6 +5,9 @@ import { IoIosBasket } from "react-icons/io";
 import { FaMoon } from "react-icons/fa";
 import { IoSunny } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
+import Badge from '@mui/material/Badge';
+
+
 
 const Header = () => {
     
@@ -32,9 +35,12 @@ if(theme){
 <div className='flex-row'>
     <input className="search-input" type="text" placeholder='search'/>
     <div >
-    <IoIosBasket className='icon' />
+   
     {/**/}
    {theme?  <FaMoon className='icon'onClick={changeTheme}/> : <IoSunny className='icon' onClick={changeTheme} />}
+   <Badge badgeContent={3} color="warning">
+   <IoIosBasket className='icon' />
+    </Badge>
     </div>
 </div>
     </div>
