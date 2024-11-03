@@ -14,7 +14,7 @@ import { setDrawer } from '../redux/slices/BasketSlice';
 const Header = () => {
     
     const navigate = useNavigate();
-    const [theme,setTheme] = useState(false) 
+const [theme,setTheme] = useState(false) 
     const changeTheme = ()=> {
 const root = document.getElementById("root")
 setTheme(!theme);
@@ -42,7 +42,9 @@ const {products} = useSelector((store)=>store.basket);
     <div >
    
 
+   
    {theme?  <FaMoon className='icon'onClick={changeTheme}/> : <IoSunny className='icon' onClick={changeTheme} />}
+
    <Badge onClick={()=>dispatch(setDrawer()) }  badgeContent={products.length} color="warning"  >
    <IoIosBasket className='icon' />
     </Badge>
