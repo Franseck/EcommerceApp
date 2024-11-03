@@ -11,7 +11,8 @@ return [];
 
 const initialState = {
 products: getBasketfromStorage(),
-drawer: false
+drawer: false,
+totalAmount : 0
 }
 const writeFromBasketToStorage =(basket)=>{
 localStorage.setItem("basket" , JSON.stringify(basket))
@@ -34,13 +35,19 @@ state.products = [...extractedProducts, findProduct]
     writeFromBasketToStorage(state.products)
 }
 },
-setDrawer: (state => {
+setDrawer: (state) => {
     state.drawer = !state.drawer
-    })
+    },
+calculateBasket : (state)=>{
+    state.totalAmount = 0
+state.products && state.products.map((product)=>{
+    state.totalAmount += product.price*product.count
+})
+}
     }
     },
 
       )
 
-      export const {  addToBasket , setDrawer} = BasketSlice.actions
+      export const {  addToBasket , setDrawer, calculateBasket} = BasketSlice.actions
       export default BasketSlice.reducer

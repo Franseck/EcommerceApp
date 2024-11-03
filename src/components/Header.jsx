@@ -6,7 +6,8 @@ import { FaMoon } from "react-icons/fa";
 import { IoSunny } from "react-icons/io5";
 import { useNavigate } from 'react-router-dom';
 import Badge from '@mui/material/Badge';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { setDrawer } from '../redux/slices/BasketSlice';
 
 
 
@@ -26,6 +27,7 @@ if(theme){
 }
     }
 
+const dispatch = useDispatch()
 const {products} = useSelector((store)=>store.basket);
 
   return (
@@ -39,9 +41,9 @@ const {products} = useSelector((store)=>store.basket);
     <input className="search-input" type="text" placeholder='search'/>
     <div >
    
-    {/**/}
+
    {theme?  <FaMoon className='icon'onClick={changeTheme}/> : <IoSunny className='icon' onClick={changeTheme} />}
-   <Badge badgeContent={products.length} color="warning">
+   <Badge onClick={()=>dispatch(setDrawer()) }  badgeContent={products.length} color="warning"  >
    <IoIosBasket className='icon' />
     </Badge>
     </div>

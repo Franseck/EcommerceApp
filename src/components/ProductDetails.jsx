@@ -5,7 +5,7 @@ import { setSelectedProduct } from '../redux/slices/ProductSlice'
 import "../css/Product.css"
 import { FaPlusSquare } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
-import { addToBasket } from '../redux/slices/BasketSlice'
+import { addToBasket, calculateBasket } from '../redux/slices/BasketSlice'
 
 const ProductDetails = () => {
 const {id} = useParams()
@@ -25,7 +25,8 @@ const addBasket =()=>{
     const payload ={
         id, price, image, title, description, count
     }
-    dispatch(addToBasket(payload))
+    dispatch(addToBasket(payload));
+    dispatch(calculateBasket());
 }
 
 
